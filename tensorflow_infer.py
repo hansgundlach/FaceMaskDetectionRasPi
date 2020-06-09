@@ -70,6 +70,9 @@ def inference(image,
         conf = float(bbox_max_scores[idx])
         class_id = bbox_max_score_classes[idx]
         bbox = y_bboxes[idx]
+        print(class_id)
+        if class_id == 0:
+            print("True this person has mask")
         # clip the coordinate, avoid the value exceed the image boundary.
         xmin = max(0, int(bbox[0] * width))
         ymin = max(0, int(bbox[1] * height))
