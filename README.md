@@ -7,6 +7,8 @@ Credit : We would like to give credit to AIZoo for their excellent mask detectio
 
 This proof of concept lays the foundation for more sophisticated systems that businesses can reopen, e.g. open doors only if all people are wearing a mask, speaker telling customers to put on a mask, etc. This system furthermore faciliates easier social distancing (no need to man the entrances to ensure compliance with mask orders) and hopefully will allow us to return to normalcy even quicker.
 
+[![maskit](http://img.youtube.com/vi/HI3VTjU7CJw/0.jpg)](http://www.youtube.com/watch?v=HI3VTjU7CJw "Maskit")
+
 Main contributors: 
 - citronella3alain
 - hansgundlach
