@@ -1,3 +1,4 @@
+
 Credit : We would like to give credit to AIZoo for their excellent mask detection model. For information about their work, see https://github.com/AIZOOTech/FaceMaskDetection for their repo.
 
 # Introduction 
@@ -6,7 +7,21 @@ Credit : We would like to give credit to AIZoo for their excellent mask detectio
 
 This proof of concept lays the foundation for more sophisticated systems that businesses can reopen, e.g. open doors only if all people are wearing a mask, speaker telling customers to put on a mask, etc. This system furthermore faciliates easier social distancing (no need to man the entrances to ensure compliance with mask orders) and hopefully will allow us to return to normalcy even quicker.
 
+Main contributors: 
+- citronella3alain
+- hansgundlach
+
+
 # Usage
 Requirements for ML model usage are found on AIZoo's page, i.e. https://github.com/AIZOOTech/FaceMaskDetection
 
-The inference model from AIzoo is tensorflow_infer.py while test_recieve_image.py, test_camera_steam.py, and upload_img.py manage the HTTP server component. 
+### Setting up the desktop server:
+```
+python simple_server.py
+```
+
+### Raspberry Pi Client:
+```
+python3 upload_img_post.py
+```
+In its current setting, the Raspberry Pi takes just 2 images for classification. However, this can be changed in line 22 to even an infinite while loop. One tentative idea at the moment is to use Ultrasonic distance sensors to identify incoming people.
