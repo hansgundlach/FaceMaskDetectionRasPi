@@ -125,15 +125,17 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         #img = cv2.imdecode(jpg_as_np, flags=1)
         #img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         #inference(img, show_result=True, target_shape=(260, 260))
-        response.write(b'12345')
+        #response.write(b'12345')
         #response.write(b'Received: ')
         #response.write(body)
-        self.wfile.write(response.getvalue())
         image = Image.open(BytesIO(body))
-        image.show()
+        #image.show()
         img = np.array(image)
         #img = cv2.imdecode(img, flags=1)
-        inference(img, show_result=True, target_shape=(260, 260))
+        inf_out = inference(img, show_result=True, target_shape=(260, 260))
+        response.write(bytes(str(inf_out), encoding='utf8'))
+        self.wfile.write(response.getvalue())
+
 
 try:
     #server = http.server.HTTPServer(('localhost', PORT), MyHandler)
